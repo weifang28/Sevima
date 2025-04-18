@@ -12,15 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->id('userid');  // Custom primary key for user ID
+            $table->string('username')->unique();  // Unique column for username
+            $table->string('password');  // Password column
+            $table->timestamp('datecreated')->useCurrent();  // DateCreated set to current timestamp by default
+            $table->timestamp('datadel')->nullable();  // Soft delete column, nullable
+            $table->timestamps();  // Default Laravel timestamps for created_at and updated_at
         });
 
+        // Additional tables if needed
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
             $table->string('token');
