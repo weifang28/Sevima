@@ -18,3 +18,5 @@ Route::get('/find_friends', [HomeController::class, 'findFriends'])->name('findF
 Route::get('/add_post', [HomeController::class, 'addPost'])->name('addPost');
 Route::post('/add_post', [HomeController::class, 'post'])->name('post');
 Route::post('/comment', [HomeController::class, 'comment'])->name('comment');
+Route::post('/follow', [HomeController::class, 'follow'])->name('follow');
+Route::post('/unfollow', [HomeController::class, 'unfollow'])->name('unfollow');

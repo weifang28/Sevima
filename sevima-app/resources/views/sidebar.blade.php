@@ -13,7 +13,7 @@
     </div>
 
     <nav class="nav flex-column">
-      <a class="nav-link" href="#">Home</a>
+      <a class="nav-link" href="{{route('home')}}">Home</a>
       <a class="nav-link" href="{{route('addPost')}}">Add Post</a>
       <a class="nav-link" href="{{route('findFriends')}}">Find Friends</a>
       <a class="nav-link text-danger mt-auto" href="{{route('logout')}}">Logout</a>
