@@ -42,11 +42,7 @@ class LoginController extends Controller
         }
     }
 
-    public function homepage()
-    {
-        return view('homepage');
-    }
-
+    
     public function logout()
     {
         Session::forget('loggedIn');

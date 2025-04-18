@@ -47,11 +47,11 @@
 </head>
 <body>
     <div class="sidebar d-flex flex-column" >
-        @yield('sidebar');
+        @yield('sidebar')
     </div>
     
     <div class="content">
-        @yield('content');
+        @yield('content')
     </div>
     
 </body>

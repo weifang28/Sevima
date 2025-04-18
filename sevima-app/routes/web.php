@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -9,22 +10,11 @@ Route::get('/', function () {
 });
 
 Route::post('/login', [LoginController::class, 'login'])->name('login');
-Route::get('/home', [LoginController::class, 'homepage'])->name('home');
+Route::get('/home', [HomeController::class, 'homepage'])->name('home');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// Route::get('/login', [LoginController::class, 'showLoginForm']);
-// Route::post('/login', [LoginController::class, 'login']);
-// Route::get('/home', function () {
-//     return view('homepage');
-// });
-// Route::get('/profile', function () {
-//     return view('profile');
-// });
-// Route::get('/logout', function () {
-//     auth()->logout();
-//     return redirect('/');
-// })->name('logout');
+Route::get('/find_friends', [HomeController::class, 'findFriends'])->name('findFriends');
 
-// Route::get('/', function () {
-//     return view('loginpage'); 
-// });
+Route::get('/add_post', [HomeController::class, 'addPost'])->name('addPost');
+Route::post('/add_post', [HomeController::class, 'post'])->name('post');
+Route::post('/comment', [HomeController::class, 'comment'])->name('comment');
